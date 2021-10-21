@@ -1,0 +1,57 @@
+@base <localhost://> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/LOD_Node/US_Hydro_LOD_Node>
+    <https://geoconnex.ca/id/connectedTo> <https://geoconnex.ca/id/LOD_Node/CAN_Hydro_LOD_Node> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081005>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081005-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081006>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081006-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081007>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081007-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081102>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081102-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081203>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081203-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081505>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081505-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081507>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081507-drainage_basin>
+    <http://www.opengeospatial.org/standards/geosparql/sfIntersects> <https://geoconnex.ca/id/hydrogeounits/Richelieu1> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081604>
+    <https://www.opengis.net/def/hy_features/ontology/hyf/lowerCatchment> <https://geoconnex.ca/id/catchment/02OJ*CA> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu/041504081604-drainage_basin>
+    <https://www.opengis.net/def/hy_features/ontology/hyf/lowerCatchment> <https://geoconnex.ca/id/catchment/02OJ*CA> .
+
+<https://cida-test.er.usgs.gov/chyld-pilot/id/hu_nexus/02OJ*CA-inflow>
+    <https://www.opengis.net/def/hy_features/ontology/hyf/receivingCatchment> <https://geoconnex.ca/gsip/info/catchment/02OJ*CA> .
+

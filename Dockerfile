@@ -9,7 +9,7 @@ EXPOSE 8080 8443
 
 WORKDIR ${CATALINA_HOME}
 
-COPY target/chyld-pilot.war /usr/local/tomcat/webapps/
+COPY chyld-pilot.war /usr/local/tomcat/webapps/
 
 ###
 # Inherited from parent container

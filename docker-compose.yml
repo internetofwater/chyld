@@ -4,9 +4,9 @@ services:
   chyld-container:
     build: .
     ports:
-      - "8080:8080"
-      - "443:8443"
-      - "8443:8443"
-    container_name: CHyLD
+      - "8081:8080"
+      - "8444:8443"
+    container_name: CHyLD2
     volumes:
       - ./:/usr/local/tomcat/GSIP/
+    restart: always

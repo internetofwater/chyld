@@ -1,8 +1,28 @@
-FROM maven:3.6.3-jdk-8-slim AS builder
-COPY . .
-RUN cd /chyld-pilot && mvn package
+  GNU nano 2.9.3                                      Dockerfile                                                 
+
+FROM unidata/tomcat-docker:8.5
 
 
-FROM tomcat:8.5.40-jre8-alpine AS deploy
+###
+# Expose ports
+###
+
 EXPOSE 8080 8443
-COPY --from=builder /chyld-pilot/target/chyld-pilot.war /usr/local/tomcat/webapps/
+
+WORKDIR ${CATALINA_HOME}
+
+COPY chyld-pilot.war /usr/local/tomcat/webapps/
+
+###
+# Inherited from parent container
+###
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+###
+# Start container
+###
+
+CMD ["catalina.sh", "run"]
+
+

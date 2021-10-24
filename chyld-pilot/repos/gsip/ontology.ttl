@@ -1,0 +1,112 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix hy: <https://www.opengis.net/def/hy_features/ontology/hyf/>.
+@prefix gw: <http://geosciences.ca/def/groundwater#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix ex: <http://gin.gw-info.net/example#>.
+@prefix gsp: <http://www.opengeospatial.org/standards/geosparql/>
+
+# Ontology used in GSIP
+
+
+
+hy:HY_Catchment rdf:type owl:Class;
+	rdfs:label "Catchment"@en,"Bassin de drainage"@fr.
+
+hy:HY_HydrometricFeature rdf:type owl:Class;
+	rdfs:label "Hydrometric feature"@en,"Entite hydrometrique"@fr.
+
+hy:HY_HydrometricStation rdf:type owl:Class;
+	rdfs:subClassOf hy:HY_HydrometricFeature;
+	rdfs:label "Station hydrometrique"@fr,"Hydrometric Station"@en.
+	
+hy:HY_HydroNexus rdf:type owl:Class;
+	rdfs:label "Hydrologic Nexus"@en,"Noeud Hydrologique"@fr.
+
+gw:GW_Well rdf:type owl:Class;
+	rdfs:label "Water Well"@en,"Puits d'eau"@fr.
+
+gw:GW_HydrogeoUnit rdf:type owl:Class;
+	rdfs:label "Hydrogeologic unit"@en,"Unite hydrogeologique"@fr.
+	
+gw:GW_AquiferUnit rdf:type owl:Class;
+	rdfs:label "Aquifer unit"@en,"Unite aquifere"@fr;
+	rdfs:subClassOf gw:GW_HydrogeoUnit.
+	
+gw:GW_AquiferSystem rdf:type owl:Class;
+	rdfs:label "Aquifer System"@en,"Systeme aquifere"@fr;
+	rdfs:subClassOf gw:GW_AquiferUnit.
+
+hy:HY_Waterbody rdf:type owl:Class;
+	rdfs:label "Water Body"@en,"Corps d'eau"@fr.
+	
+	
+
+# properties
+	
+hy:lowerCatchment rdf:type owl:ObjectProperty;
+  owl:inverseOf hy:upperCatchment.
+
+hy:upperCatchment rdf:type owl:ObjectProperty.
+
+hy:contains rdf:type owl:ObjectProperty,owl:TransitiveProperty;
+        owl:inverseOf hy:inside.
+		
+hy:inside rdf:type owl:ObjectProperty.
+
+hy:realizedNexus rdf:type owl:ObjectProperty;
+  owl:inverseOf hy:nexusRealization.
+
+hy:nexusRealization rdf:type owl:ObjectProperty.
+
+hy:realizedCatchment rdf:type owl:ObjectProperty;
+	owl:inverseOf hy:catchmentRealization.
+
+hy:catchmentRealization rdf:type owl:ObjectProperty.
+
+hy:hydrometricNetwork rdf:Type owl:ObjectProperty;
+	owl:inverseOf hy:networkStation.
+
+hy:networkStation rdf:type owl:ObjectProperty.
+
+hy:containingCatchment rdf:type owl:ObjectProperty,owl:TransitiveProperty.
+
+hy:containedcatchment rdf:type owl:ObjectProperty,owl:TransitiveProperty;
+	owl:inverseOf hy:containingCatchment.
+	
+hy:encompassingCatchment rdf:type owl:ObjectProperty;
+	owl:inverseOf hy:exorheicDrainage.
+
+hy:exorheicDrainage rdf:type owl:ObjectProperty.
+	
+hy:inflow rdf:type owl:ObjectProperty; 
+	owl:inverseOf hy:receivingCatchment.
+
+hy:outflow rdf:type owl:ObjectProperty; 
+	owl:inverseOf hy:contributingCatchment.
+
+hy:contributingCatchment rdf:tye owl:ObjectProperty .
+hy:receivingCatchment rdf:type owl:ObjectProperty .
+
+hy:upstreamWaterbody rdf:type owl:ObjectProperty,owl:TransitiveProperty;
+	owl:inverseOf hy:downstreamWaterbody.
+hy:downstreamWaterbody rdf:type owl:ObjectProperty,owl:TransitiveProperty.
+
+gw:gwAquiferSystemPart rdf:type owl:ObjectProperty,owl:TransitiveProperty;
+	owl:inverseOf gw:gwAquiferSystem.
+gw:gwAquiferSystem rdf:type owl:ObjectProperty,owl:TransitiveProperty.
+
+gsp:sfWithin rdf:type owl:ObjectProperty;
+	owl:inverseOf gsp:sfContains.
+
+gsp:sfContains rdf:type owl:ObjectProperty.	
+
+gsp:sfIntersects rdf:type owl:ObjectProperty, owl:SymmetricProperty.
+
